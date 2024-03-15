@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% set active_page = "page2" %}
+
+{% block title %}Page 2{% endblock %}
+
+{% block content %}
+    <!--page content-->
+
+    <h1>Your Account</h1>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <label class="form-label">Your Username</label>
+            <input type="text" class="form-control mb-3" placeholder="{{ new_name }}" readonly>
+
+            <label class="form-label">Your Password</label>
+            <div class="d-flex">
+                <input type="text" class="form-control mb-3" placeholder="{{ new_password }}" readonly>
+                <a href="/new-password"><button type="button" class="btn btn-dark mb-3 ms-3 text-nowrap">Change Password</button></a>
+            </div>
+
+            <a href="/"><button type="button" class="btn btn-dark">Return Home</button></a>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% set active_page = "newAccount" %}
+
+{% block title %}New Account{% endblock %}
+
+{% block content %}
+    <!--page content-->
+    <h1>Create Account</h1>
+
+    <div class="col-sm-6">
+        <form action="/account">
+            <div class="mb-3">
+                <label for="user_name" class="form-label">Username</label>
+                <input type="text" class="form-control" placeholder="myusername123" name="user_name">              
+            </div>
+            
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="text" class="form-control" placeholder="mypassword123!" name="user_password">  
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form> 
+    </div>
+{% endblock %}
