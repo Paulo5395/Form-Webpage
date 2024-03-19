@@ -15,12 +15,12 @@ def render_createAccount():
 
 @app.route("/account")
 def render_account():
-    if "username" in account:
+    if ("username") and ("password") in account:
         new_user_password = request.args["new_password"]
 
         account["password"] = new_user_password
 
-        return render_template('account.html', new_password = new_user_password, new_name = account["username"])
+        return render_template('account.html', password = new_user_password, name = account["username"])
 
     else:
         user_name = request.args['user_name']
@@ -29,7 +29,7 @@ def render_account():
         account["username"] = user_name
         account["password"] = user_password
         
-        return render_template('account.html', new_name = user_name, new_password = user_password)
+        return render_template('account.html', name = user_name, password = user_password)
 
 @app.route("/new-password")
 def render_newPassword():
@@ -38,4 +38,4 @@ def render_newPassword():
     return render_template('newPassword.html', old_password = current_password)
     
 if __name__=="__main__":
-    app.run(debug=True)
+    app.run(debug=False)

@@ -12,11 +12,12 @@
     <div class="row">
         <div class="col-sm-6">
             <label class="form-label">Your Username</label>
-            <input type="text" class="form-control mb-3" placeholder="{{ new_name }}" readonly>
+            <input type="text" class="form-control mb-3" placeholder="{{ name }}" readonly>
 
             <label class="form-label">Your Password</label>
             <div class="d-flex">
-                <input type="text" class="form-control mb-3" placeholder="{{ new_password }}" readonly>
+                <input type="password" class="form-control mb-3" id="user-password" value="{{ password }}" readonly>
+                <button type="Button" class="btn btn-dark mb-3 ms-3 text-nowrap" onclick="toggleHidden()">Show Password</button>
                 <a href="/new-password"><button type="button" class="btn btn-dark mb-3 ms-3 text-nowrap">Change Password</button></a>
             </div>
 
